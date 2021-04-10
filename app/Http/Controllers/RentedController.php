@@ -19,7 +19,7 @@ class RentedController extends Controller
         $data = DB::table('rent')
             ->join('cars', 'cars.id', '=', 'rent.car_id')
             ->join('users', 'users.id', '=', 'rent.user_id')
-            ->select('cars.merk','cars.license_plate', 'users.name','users.phone_number', 'rent.start_date', 'rent.end_date', 'rent.id')
+            ->select('cars.merk','cars.license_plate', 'users.first_name','users.last_name','users.phone_number', 'rent.start_date', 'rent.end_date', 'rent.id')
             ->get();
 
         $rent = Rent::all();

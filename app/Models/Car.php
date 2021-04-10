@@ -11,6 +11,6 @@ class Car extends Model
     protected $guarded = [''];
 
     public function rent (){
-        $this->hasMany(Rent::class, 'car_id', 'id');
+        return $this->hasMany(Rent::class, 'car_id', 'id');
     }
 }

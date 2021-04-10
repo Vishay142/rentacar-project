@@ -62,7 +62,7 @@
                         <p>1376PC</p>
                         <p>Almere, Nederland</p>
                         <p>info@rentacar.nl</p>
-                        <p>+31 6 12348765</p>
+                        <p>+31 6 12348762</p>
 
                     </div>
 
