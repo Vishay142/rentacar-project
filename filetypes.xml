@@ -1,9 +1,0 @@
-<application>
-  <component name="FileTypeManager" version="17">
-    <extensionMap>
-      <mapping pattern="Hello World" type="HTML" />
-      <mapping pattern=".env" type="PLAIN_TEXT" />
-      <mapping pattern="foto" type="PLAIN_TEXT" />
-    </extensionMap>
-  </component>
-</application>
