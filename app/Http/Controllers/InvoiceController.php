@@ -19,7 +19,7 @@ class InvoiceController extends Controller
         $invoices = DB::table('rent')
             ->join('cars', 'cars.id', '=', 'rent.car_id')
             ->join('users', 'users.id', '=', 'rent.user_id')
-            ->select('cars.id', 'cars.license_plate', 'cars.merk', 'cars.price','cars.type', 'cars.price','users.name', 'users.adress', 'users.zip_code', 'users.city','users.phone_number', 'rent.start_date', 'rent.end_date')
+            ->select('cars.id', 'cars.license_plate', 'cars.merk', 'cars.price','cars.type', 'cars.price','users.first_name', 'users.last_name', 'users.adress', 'users.zip_code', 'users.city','users.phone_number', 'rent.start_date', 'rent.end_date')
             ->where('rent.user_id', $user_id)
             ->get();
 

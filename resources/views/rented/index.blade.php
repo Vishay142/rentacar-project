@@ -24,7 +24,8 @@
                                 <th scope="col">id</th>
                                 <th scope="col">Ophalen</th>
                                 <th scope="col">Inleveren</th>
-                                <th scope="col">Naam</th>
+                                <th scope="col">Voornaam</th>
+                                <th scope="col">Achternaam</th>
                                 <th scope="col">Telefoonnummer</th>
                                 <th scope="col">Merk</th>
                                 <th scope="col">Kenteken</th>
@@ -39,7 +40,8 @@
                                     <td>{{$row->id}}</td>
                                     <td>{{$row->start_date}}</td>
                                     <td>{{$row->end_date}}</td>
-                                    <td>{{$row->name}}</td>
+                                    <td>{{$row->first_name}}</td>
+                                    <td>{{$row->last_name}}</td>
                                     <td>{{$row->phone_number}}</td>
                                     <td>{{$row->merk}}</td>
                                     <td>{{$row->license_plate}}</td>

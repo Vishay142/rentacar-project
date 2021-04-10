@@ -43,16 +43,18 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Voornaam') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" value=" {{$user['name']}}" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+                                    <input id="name" type="text" value=" {{$user['first_name']}}" class="form-control" name="first_name">
+                                </div>
+                            </div>
 
-                                    @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Lastname') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" value=" {{$user['last_name']}}" class="form-control" name="last_name">
                                 </div>
                             </div>
 

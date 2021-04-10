@@ -7,10 +7,7 @@
             --input-padding-y: .75rem;
         }
 
-        body {
-            background: #007bff;
-            background: linear-gradient(to right, #0062E6, #33AEFF);
-        }
+
 
         .card-signin {
             border: 0;
@@ -134,18 +131,14 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-
-
+                            <div class="form-label-group">
+                                <input type=text" id="inputUserame" class="form-control" placeholder="Username" required id="Username" type="text" class="form-control " name="first_name">
+                                <label for="Username" class="col-md-5 col-form-label text-md-left">Voornaam</label>
+                            </div>
 
                             <div class="form-label-group">
-                                <input type=text" id="inputUserame" class="form-control" placeholder="Username" required id="Username" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
-                                <label for="Username" class="col-md-4 col-form-label text-md-left">Naam</label>
-
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input type=text" id="inputUserame" class="form-control" placeholder="Username" required id="Username" type="text" class="form-control" name="last_name">
+                                <label for="lastname" class="col-md-5 col-form-label text-md-left">Achternaam</label>
                             </div>
 
 

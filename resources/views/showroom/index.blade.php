@@ -3,6 +3,16 @@
 @section('content')
 
     <style>
+        .btn{
+            border-radius: 18px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+        }
         .card {
             border-radius: 18px;
             background: white;
@@ -22,14 +32,28 @@
         .container1{
             padding:60px;
         }
+        input {
+            text-align: center;
+        }
+
     </style>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-
     <div class="container1">
+        <div class="row d-flex justify-content-center">
+            <form class="form-inline" method="GET" action={{route('showroom.index')}}>
+
+                @csrf
+                <input id="birth" type="date" class="form-control " name="start_date"  required autocomplete="birth">
+
+                <input id="birth" type="date" class="form-control" name="end_date" required autocomplete="birth">
+
+                <button type="submit" class="btn btn-success">Zoeken</button>
+
+            </form>
+        </div>
+{{--        End datepicker--}}
         <div class="row">
-            @foreach($showroom as $car)
+        @foreach($cars as $car)
 
             <div class="col order-last">
                 <div class="card" style="width: 18rem;">
