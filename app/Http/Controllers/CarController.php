@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -36,13 +37,15 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        $car = Car::create($request->validate([
-            'license_plate' => 'max:255',
-            'type' => 'max:255',
-            'merk' => 'max:255',
-            'price' => 'max:255',
-            'image' => 'max:255',
-        ]));
+        $path = $request->file('image')->store('images', 's3');
+        $car = Car::create([
+            'url'=>Storage::disk('s3')->url($path),
+            'license_plate' =>$request->input('license_plate'),
+            'type' =>$request->input('type'),
+            'merk' =>$request->input('merk'),
+            'price' =>$request->input('price'),
+        ]);
+
         $this->imageUpload($car);
         return redirect()->route('cars.index', compact('car'));
 
