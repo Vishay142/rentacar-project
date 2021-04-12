@@ -57,7 +57,7 @@
 
             <div class="col order-last">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ asset('storage/'. $car->image)}}" alt="Card image cap">
+                    <img src="{{ $car->url}}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">{{$car->merk}}</h5>
                         <p class="card-text">{{$car->type}}</p>
